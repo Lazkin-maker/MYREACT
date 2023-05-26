@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 
 type props = {
     icon: React.ReactNode;
+    name: String
 }
 
-export function ButtonWithSubElements({ icon }: props) {
+export function ButtonWithSubElements({ icon, name }: props) {
     const [isOpen, setIsOpen] = useState(false);
     const handleClick = () => {
         setIsOpen(!isOpen);
@@ -15,12 +16,12 @@ export function ButtonWithSubElements({ icon }: props) {
         <div>
             <div>
                 <button
-                    className="flex items-center justify-between bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none"
+                    className="flex items-center w-80 justify-between bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-full focus:outline-none"
                     onClick={handleClick}
                 >
                     <div className="flex items-center">
                     <div className="w-6 h-6 mr-2">{icon}</div>  
-                    <span>Toggle Sub Elements</span> 
+                    <span className="ml-20 ">{name}</span> 
                     </div>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
